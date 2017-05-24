@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Barcode Generator</title>
+	<link rel="stylesheet" href="fonts.css" type="text/css" charset="utf-8" />
+	<style type="text/css">
+	body {
+		background-color:white;
+		font-family:Verdana,Tahoma,Arial,Sans-Serif;
+		color:black;
+		font-size:12px;
+	}
+
+	#barcodegenerator
+	{
+		font-family:'Conv_fre3of9x',Sans-Serif;
+		width:300px;
+		margin:10px auto;
+		text-align:left;
+		border:1px solid #444;
+		padding:10px;
+        text-align: justify;
+    	-moz-text-align-last: center;
+    	text-align-last: center;
+	}
+
+	#idtext
+	{
+		font-family:Sans-Serif;
+		margin:2px auto;
+		text-align:left;
+		padding:1px;
+        text-align: justify;
+    	-moz-text-align-last: center;
+    	text-align-last: center;
+	}
+
+	</style>
+    
+    
+</head>
+<body>
+	
+    <input id="clickMe" type="button" value="To run the barcode generator, click here." onclick="RunGenerator();" />
+    
+    <div id="barcodelist">
+    
+    </div>
+    
+    
+    
+	<script type="text/javascript">
+    function RunGenerator()
+    {
+        var convert = new String("")
+        convert = prompt("Please enter what you want converted into a barcode. Please use exclaimation marks instead of spaces in order for them to work. This uses the 39 barcode standard. Asterisks are automatically appended.", "");
+        
+    	if(convert != null)
+    	{
+            document.getElementById("barcodelist").innerHTML = document.getElementById("barcodelist").innerHTML + "<div id=\"barcodegenerator\" style=\"font-size:40px;\">*" + convert + "*\n<div id=\"idtext\"style=\"font-size:10px\">" + convert + "</div></div>";
+    	}
+    }
+    </script>
+</body>
+</html>
